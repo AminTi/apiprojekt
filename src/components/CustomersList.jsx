@@ -67,12 +67,10 @@ const CustomersList = () => {
             })
     }
 
-    const onSubmit = (data) => {
+    const onSubmit = (data, e) => {
         const name = data.username
         const organisationNr = data.organisationNr
-
         const vatNr = data.vatNr
-
         const reference = data.reference
         const email = data.email
         const website = data.email
@@ -84,6 +82,7 @@ const CustomersList = () => {
             .then((data) => {
                 fetchClients()
             })
+        e.target.reset()
     }
     useEffect(() => {
         fetchClients()

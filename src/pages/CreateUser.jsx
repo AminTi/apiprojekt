@@ -38,7 +38,7 @@ const CreateUser = () => {
     const userKit = new UserKit()
     const { register, handleSubmit, errors } = useForm()
 
-    const onSubmit = (data) => {
+    const onSubmit = (data, e) => {
         const firstName = data.firstName
         const lastName = data.lastName
         const email = data.email
@@ -46,6 +46,7 @@ const CreateUser = () => {
         const organisationName = data.organisationName
         const organisationKind = data.organisationKind
         userKit.register(firstName, lastName, email, password, organisationName, organisationKind)
+        e.target.reset()
     }
 
     return (
