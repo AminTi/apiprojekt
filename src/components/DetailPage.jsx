@@ -34,7 +34,19 @@ const Span = styled.span`
     padding: 10px 10px;
 `
 
-// #f597a9
+const DeleteBtn = styled.button`
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px;
+    border-radius: 5px;
+`
 
 function DetailPage(props) {
     const history = useHistory()
@@ -95,7 +107,7 @@ function DetailPage(props) {
                     PaymentTerm: <Span>{data && data[0].paymentTerm}</Span>
                 </CustomersInfo>
             </SubWrapper>
-            <button onClick={Delete}>Delete</button>
+            <DeleteBtn onClick={Delete}>Delete </DeleteBtn>
         </DetailPageWrapper>
     )
 }

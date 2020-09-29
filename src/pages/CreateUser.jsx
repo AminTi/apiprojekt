@@ -73,8 +73,8 @@ const CreateUser = () => {
                 {errors.organisationName && <ErrorOutPut> organisationName is required </ErrorOutPut>}
             </InputsDiv>
             <InputsDiv>
-                <Inputs type="text" placeholder="0" name="organisationKind" ref={register({ required: true })} />
-                {errors.organisationName && <ErrorOutPut> organisationKind is required. try 0</ErrorOutPut>}
+                <Inputs type="number" placeholder="012" name="organisationKind" ref={register({ required: true, maxLength: 1 })} />
+                {errors.organisationKind && <ErrorOutPut> organisationKind is required. try 1,2,3</ErrorOutPut>}
             </InputsDiv>
             <CreateBtn type="submit">Create User</CreateBtn>
         </InputWrapper>

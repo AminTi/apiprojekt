@@ -1,5 +1,5 @@
 const ROOT_URL = "https://frebi.willandskill.eu/"
-const CREATE_USER = `${ROOT_URL}auth/users/create/`
+const CREATE_USER = `${ROOT_URL}auth/users/`
 const LOGIN_URL = `${ROOT_URL}api-token-auth/`
 const CURRENT_USER = `${ROOT_URL}api/v1/me`
 

@@ -86,7 +86,7 @@ const CustomersList = () => {
     }
     useEffect(() => {
         fetchClients()
-    }, [])
+    }, [onSubmit])
 
     return (
         <div>

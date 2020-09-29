@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import UserKit from "../data/UserKit"
 import { useForm } from "react-hook-form"
@@ -21,7 +21,7 @@ const Form = styled.form`
     justify-content: center;
     align-items: center;
 `
-const LoginBtn = styled.button`
+const LoginBtn = styled.input`
     background-color: blue;
     border: none;
     color: white;
@@ -78,13 +78,13 @@ const Login = () => {
     const onSubmit = (data) => {
         const email = data.email
         const password = data.password
+
         userKit
             .login(email, password)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.token)
                 userKit.setToken(data.token)
-                history.push("/home")
+                data.token && history.push("/home")
             })
     }
 
@@ -115,7 +115,7 @@ const Login = () => {
                     <Inputs type="password" placeholder="Password" name="password" ref={register({ required: true, minLength: 8 })} />
                     <div> {errors.password && <ErrorInput> Password Invalid </ErrorInput>}</div>
 
-                    <LoginBtn> Login </LoginBtn>
+                    <LoginBtn type="submit" />
                 </Form>
             )}
         </LoginWrapper>
